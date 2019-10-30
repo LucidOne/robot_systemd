@@ -150,6 +150,8 @@ include_directories(
 ## Install ##
 #############
 
+catkin_add_env_hooks(00.environment SHELLS sh DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/env-hooks)
+
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
 
