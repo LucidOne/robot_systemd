@@ -17,13 +17,19 @@ The goal of [this package](https://github.com/LucidOne/robot_systemd) is to
 provide infrastructure to start `roscore` and `roslaunch` that *works by
 default*. OEMs and system integrators should also be able to depend on it to
 build their own ROS packages that can customize the system startup to support
-inevitable hardware variations. It also enables individual end-users to be able
-to make personal customizations without being overwritten by vendor upgrades.
+inevitable hardware variations.
 
-## Example Configuration
+It also enables individual end-users to be able to load workspace overlays and
+make personal customizations without being overwritten by vendor upgrades.
+
+It is designed to be integrated with
+[network autoconfiguration](https://github.com/LucidOne/network_autoconfig)
+for an improved out-of-the-box experience.
+
+## Example Configuration [Optional]
 ~/.ros/environment
 ```
 ROS_DISTRO=kinetic
-[ROS_INTERFACE=auto](https://github.com/LucidOne/network_autoconfig)
+ROS_INTERFACE=auto
 ROS_SETUP=/home/turtlebot/catkin_ws/devel/setup.bash
 ```
