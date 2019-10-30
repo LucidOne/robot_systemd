@@ -105,7 +105,7 @@ switch ROS distributions on a regular basis, we suggest changing ``~/.bashrc``
              $HOME/.ros/environment
              /opt/ros/$ROS_DISTRO/setup.sh
     "
-    
+
     for file in $sources; do
         [ -f $file ] || continue
         . $file
