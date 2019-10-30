@@ -233,11 +233,11 @@ THANKS!
 A special shout-out to everyone else who work on this problem space and came up
 with different solutions!
 
-https://github.com/laas/ros_comm_upstart
-https://github.com/TurtleBot-Mfg/ros-system-daemon-hydro
-https://github.com/ros/meta-ros/issues/224
-https://github.com/ros/meta-ros/blob/master/recipes-ros/ros-comm/roslaunch/roscore.service
-https://blog.roverrobotics.com/how-to-run-ros-on-startup-bootup/
-https://github.com/clearpathrobotics/robot_upstart
+| https://github.com/laas/ros_comm_upstart
+| https://github.com/TurtleBot-Mfg/ros-system-daemon-hydro
+| https://github.com/ros/meta-ros/issues/224
+| https://github.com/ros/meta-ros/blob/master/recipes-ros/ros-comm/roslaunch/roscore.service
+| https://blog.roverrobotics.com/how-to-run-ros-on-startup-bootup/
+| https://github.com/clearpathrobotics/robot_upstart
 
 Also, a pre-emptive thank you to everyone who submits issues and pull requests.
