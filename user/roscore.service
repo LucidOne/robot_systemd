@@ -1,0 +1,21 @@
+[Unit]
+Description=ROS Master + Parameter Server + rosout logging
+Documentation=http://wiki.ros.org/robot_systemd
+After=network-online.target
+Wants=network-online.target
+AssertPathExists=/opt/ros
+
+[Service]
+Type=simple
+SyslogIdentifier=ros_core
+Environment=ROS_PORT=11311
+Environment=ROS_DISTRO=kinetic
+EnvironmentFile=-/etc/ros/environment
+EnvironmentFile=-%h/.ros/environment
+ExecStart=/bin/bash -c ' \
+  source $${ROS_SETUP:=/opt/ros/$$ROS_DISTRO/setup.bash} && \
+  exec /opt/ros/$$ROS_DISTRO/bin/roscore -p $$ROS_PORT \
+'
+
+[Install]
+WantedBy=default.target

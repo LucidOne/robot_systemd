@@ -1,0 +1,3 @@
+user/roscore.service /usr/lib/systemd/user
+user/roscorelaunch@.service /usr/lib/systemd/user
+user/roslaunch@.service /usr/lib/systemd/user

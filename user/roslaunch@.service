@@ -1,0 +1,35 @@
+[Unit]
+Description=ROS Launch
+Documentation=http://wiki.ros.org/robot_systemd
+After=network-online.target systemd-udevd.service roscore.service
+Wants=network-online.target systemd-udevd.service
+BindsTo=roscore.service
+AssertPathExists=/opt/ros
+
+[Service]
+Type=simple
+SyslogIdentifier=ros_%I
+Environment=SD_INSTANCE=%I
+Environment=ROS_PORT=11311
+Environment=ROS_DISTRO=kinetic
+EnvironmentFile=-/etc/ros/environment
+EnvironmentFile=-%h/.ros/environment
+
+# Remember only you can prevent vendor lock
+ExecStartPre=/bin/bash -c ' \
+  if [ -x /bin/netcat ]; then \
+    for i in {1..10}; do \
+      sleep 0.2; \
+      ! netcat -z localhost $$ROS_PORT || break; \
+    done; \
+  else \
+    sleep 1; \
+  fi \
+'
+ExecStart=/bin/bash -c ' \
+  source $${ROS_SETUP:=/opt/ros/$$ROS_DISTRO/setup.bash} && \
+  exec /opt/ros/$$ROS_DISTRO/bin/roslaunch $${SD_INSTANCE%:*} $${SD_INSTANCE#*:} \
+'
+
+[Install]
+WantedBy=default.target
