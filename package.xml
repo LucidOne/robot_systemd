@@ -45,7 +45,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <exec_depend>roslaunch</exec_depend>
 
-  <conflict>ros-melodic-robot-systemd</conflict>
+  <!-- <conflict>ros-melodic-robot-systemd</conflict> -->
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

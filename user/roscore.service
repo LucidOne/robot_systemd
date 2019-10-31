@@ -8,6 +8,8 @@ AssertPathExists=/opt/ros
 [Service]
 Type=simple
 SyslogIdentifier=ros_core
+TasksMax=infinity
+KillSignal=SIGINT
 Environment=ROS_PORT=11311
 Environment=ROS_DISTRO=kinetic
 EnvironmentFile=-/etc/ros/environment

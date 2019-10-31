@@ -9,6 +9,8 @@ AssertPathExists=/opt/ros
 [Service]
 Type=simple
 SyslogIdentifier=ros_%I
+TasksMax=infinity
+KillSignal=SIGINT
 Environment=SD_INSTANCE=%I
 Environment=ROS_PORT=11311
 Environment=ROS_DISTRO=kinetic
